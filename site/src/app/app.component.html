@@ -1,0 +1,8 @@
+<!-- Chỉ hiển thị nếu không phải trang đăng ký -->
+<app-header *ngIf="!isRegisterPage()"></app-header>
+
+<!-- Nội dung thay đổi theo route -->
+<router-outlet></router-outlet>
+
+<!-- Chỉ hiển thị nếu không phải trang đăng ký -->
+<app-footer *ngIf="!isRegisterPage()"></app-footer>

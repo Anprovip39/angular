@@ -1,0 +1,16 @@
+
+<div class="container">
+
+    <div class="d-flex justify-content-end my-1">
+        <select [(ngModel)]="SortOder" (ngModelChange)="SortProducts()" class="form-select w-25">
+            <option value="">--- Chọn thứ tự ---</option>
+            <option value="asc">Giá tăng dần</option>
+            <option value="desc">Giá giảm dần</option>
+        </select>
+    </div>
+    <app-listcard [data]="SortedList"></app-listcard>
+    <app-listcard [data]="HotProducts" [title]="'Hot Tour'"></app-listcard>
+    <app-listcard [data]="OutProducts" [title]="'Tour ngoài nước'"></app-listcard>
+    <app-listcard [data]="InProducts" [title]="'Tour trong nuớc'"></app-listcard>
+
+</div>

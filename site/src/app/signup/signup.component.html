@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <h2 class="text-center">Đăng ký tài khoản</h2>
+  <form
+    (ngSubmit)="onSubmit()"
+    action=""
+    class="border p-4 rounded shadow w-50 mx-auto mb-3"
+    #registerForm="ngForm"
+  >
+    <div class="mb-3">
+      <div class="form-label">Email</div>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
+        email
+      />
+      <small class="text-danger" *ngIf="email.invalid && email.touched"
+        >❌ Email khong hop le</small
+      >
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Mật khẩu</div>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        minlength="6"
+      />
+      <small class="text-danger" *ngIf="password.invalid && password.touched"
+        >❌ Mat khau phai it nhat 6 ky tu</small
+      >
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Xác nhận mật khẩu</div>
+      <input
+        type="password"
+        name="repass"
+        class="form-control"
+        [(ngModel)]="user.repass"
+        #repass="ngModel"
+        required
+        minlength="6"
+      />
+      <small class="text-danger" *ngIf="repass.invalid && repass.touched"
+        >❌ Vui long nhap lai mat khau</small
+      >
+      <small
+        class="text-danger"
+        *ngIf="user.password !== user.repass && repass.touched"
+        >❌ Mat khau khong trung khop</small
+      >
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Anh dai dien</label
+      ><input
+        type="file"
+        class="form-control"
+        (change)="onFileSelected($event)"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      [disabled]="registerForm.invalid"
+    >
+      Đăng ký
+    </button>
+  </form>
+  <p *ngIf="submitted" class="text-success text-center mt-3">
+    ✅ Bạn đã đăng ký thành công!
+  </p>
+</div>
