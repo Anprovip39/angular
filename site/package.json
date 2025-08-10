@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "npx ng build --configuration=production",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "node ./node_modules/@angular/cli/bin/ng serve",
+    "build": "node ./node_modules/@angular/cli/bin/ng build --configuration=production",
+    "watch": "node ./node_modules/@angular/cli/bin/ng build --watch --configuration development",
+    "test": "node ./node_modules/@angular/cli/bin/ng test"
   },
   "private": true,
   "dependencies": {
