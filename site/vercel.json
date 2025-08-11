@@ -1,11 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build" }
+    { "src": "angular.json", "use": "@vercel/static-build", "config": { "distDir": "dist/site" } }
   ],
-  "framework": "angular"
-  ,
-    "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "src": "/.*", "dest": "/index.html" }
   ]
 }
